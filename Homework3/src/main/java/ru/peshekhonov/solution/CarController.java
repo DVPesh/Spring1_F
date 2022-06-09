@@ -38,7 +38,7 @@ public class CarController {
         }
     }
 
-    @GetMapping("/car/{id}")
+    @GetMapping("/cars/{id}")
     @ResponseBody
     public String getById(@PathVariable int id) {
         Optional<Car> car = repository.getAll().stream().filter(item -> item.getId() == id).findFirst();
@@ -52,7 +52,7 @@ public class CarController {
         return "carList";
     }
 
-    @PostMapping("/car/add")
+    @PostMapping("/cars")
     @ResponseBody
     public void add(@RequestBody Car car) {
         int id = repository.getAll().stream().mapToInt(Car::getId).max().orElse(0) + 1;
@@ -65,7 +65,7 @@ public class CarController {
         repository.removeAll();
     }
 
-    @DeleteMapping("/car/{id}")
+    @DeleteMapping("/cars/{id}")
     @ResponseBody
     public void deleteById(@PathVariable int id) {
         repository.removeById(id);

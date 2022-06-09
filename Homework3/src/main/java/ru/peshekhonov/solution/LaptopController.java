@@ -34,7 +34,7 @@ public class LaptopController {
         }
     }
 
-    @GetMapping("/laptop/{id}")
+    @GetMapping("/laptops/{id}")
     public String getById(@PathVariable int id) {
         Optional<Laptop> laptop = repository.getAll().stream().filter(item -> item.getId() == id).findFirst();
         return laptop.isPresent() ? String.format("Laptop: %s, price: %s", laptop.get().getTitle(), laptop.get().getPrice()) : "No laptop with id = " + id;
@@ -45,7 +45,7 @@ public class LaptopController {
         return repository.getAll();
     }
 
-    @PostMapping("/laptop/add")
+    @PostMapping("/laptops")
     public void add(@RequestBody Laptop laptop) {
         int id = repository.getAll().stream().mapToInt(Laptop::getId).max().orElse(0) + 1;
         repository.add(new Laptop(id, laptop.getTitle(), laptop.getPrice()));
@@ -56,7 +56,7 @@ public class LaptopController {
         repository.removeAll();
     }
 
-    @DeleteMapping("/laptop/{id}")
+    @DeleteMapping("/laptops/{id}")
     public void deleteById(@PathVariable int id) {
         repository.removeById(id);
     }
