@@ -49,7 +49,7 @@ public class CarController {
     public String showAll(Model model) {
         List<Car> cars = repository.getAll();
         model.addAttribute("cars", cars);
-        return "list";
+        return "carList";
     }
 
     @PostMapping("/car/add")
