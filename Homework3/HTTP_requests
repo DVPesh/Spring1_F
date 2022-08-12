@@ -1,0 +1,14 @@
+localhost:8190/goods/cars/filter/price/more?price=810000
+
+localhost:8190/goods/cars/filter/price/less?price=840000
+
+localhost:8190/goods/cars
+
+localhost:8190/goods/laptops/filter/price/less?price=100000
+
+localhost:8190/goods/laptops/filter/price/more?price=100000
+
+localhost:8190/goods/laptops
+
+
+

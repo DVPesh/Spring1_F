@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Автомобили</title>
+</head>
+<body>
+<h2>Список автомобилей</h2>
+<p th:each="car : ${cars}"> автомобиль : <b th:text="${car.title}"></b>, цена: <b th:text="${car.price}"></b>,
+    id = <b th:text="${car.id}"></b>
+</p>
+</body>
+</html>
